@@ -7,7 +7,7 @@ import { ButtonContainer } from './Button'
 export default class Navbar extends Component {
     render() {
         return (
-            <nav className="navbar navbar-expand-sm bg-primary navbar-dark px-sm-5">
+            <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
             {/*/* 
                 https://www.iconfinder.com/icons/1243689/call_phone_icon
                 Creative Commons (Attribution 3.0 Unported);
@@ -18,7 +18,7 @@ export default class Navbar extends Component {
                 </Link>
                 <ul className="navbar-nav align-item-center">
                     <li className="nav-item ml-5">
-                        <Link to="/" className="nav-link">Products</Link>
+                        <Link to="/" className="nav-link">products</Link>
                     </li>
                 </ul>
                 <Link to="/cart" className="ml-auto">
@@ -29,7 +29,16 @@ export default class Navbar extends Component {
                         my cart
                     </ButtonContainer>
                 </Link>
-            </nav>
+            </NavWrapper>
         )
     }
 }
+
+const NavWrapper = styled.nav`
+    background: var(--mainBlue);
+    .nav-link{
+        color: var(--mainWhite) !important;
+        font-size: 1.3rem;
+        text-transform: capitalize;
+    }
+`
